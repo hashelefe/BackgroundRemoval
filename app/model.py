@@ -10,6 +10,11 @@ import io
 import cv2
 import os  # For temporary file management
 
+
+cloud_name = os.environ.get('CLOUDINARY_CLOUD_NAME')
+api_key = os.environ.get('CLOUDINARY_API_KEY')
+api_secret = os.environ.get('CLOUDINARY_API_SECRET')
+
 def load_model():
     """
     Loads the DeepLabV3+ ResNet50 model with recommended weights.
@@ -145,10 +150,10 @@ def api_call(input_url: str):
 
 # Example usage (replace with your actual Cloudinary credentials)
 cloudinary.config(
-    cloud_name="dj0v7ypzd",
-    api_key="889622549467972",
-    api_secret="ZGDR6GYIHF53RsYJcZxmCl2nmnI"
-)
+            cloud_name=cloud_name,
+            api_key=api_key,
+            api_secret=api_secret
+        )
 
 input_url = "https://res.cloudinary.com/dj0v7ypzd/image/upload/v1709578479/cait/m0mlhgugzyorlstwkbeq.jpg"
 response = api_call(input_url)

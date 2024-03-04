@@ -7,14 +7,9 @@ app = FastAPI(title="Remove Background", description="Remove Background API", ve
 def home():
     return {"message": "Hello World"}
     
-
 @app.post("/remove-background", response_model=str, status_code=200, tags=["Remove Background"])
 def remove_background(data:dict):
     return api_call(str(data['input_url']))
-
-@app.post("/xd", response_model=str, status_code=200, tags=["Remove Background"])
-def xd(request: Request):
-    return request.body.decode('utf-8')
 
 @app.post("/data/")
 async def get_data(data: dict):
