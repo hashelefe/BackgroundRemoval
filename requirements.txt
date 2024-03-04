@@ -1,0 +1,6 @@
+torch
+torchvision
+cloudinary
+numpy
+requests
+opencv-python
